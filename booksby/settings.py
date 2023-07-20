@@ -67,7 +67,7 @@ INSTALLED_APPS = [
     'rest_framework', 'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
     'django.contrib.messages', 'django.contrib.staticfiles', 'books', 'user',
-    'markdownify.apps.MarkdownifyConfig'
+    'markdownify.apps.MarkdownifyConfig', 'graphene_django'
 ]
 
 MIDDLEWARE = [
@@ -261,3 +261,7 @@ if env('ENV') == 'local':
             },
         }
     }
+
+GRAPHENE = {
+    'SCHEMA': 'books.graphql.schema.schema'
+}

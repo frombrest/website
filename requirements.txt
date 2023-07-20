@@ -23,3 +23,5 @@ algoliasearch>=2.0,<3.0
 djangorestframework
 webdriver-manager
 django-markdownify
+graphene-django
+django-filter

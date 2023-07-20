@@ -1,4 +1,7 @@
 from django.urls import path
+from graphene_django.views import GraphQLView
+from django.views.decorators.csrf import csrf_exempt
+
 from books.views import stats, catalog, book, person, support, articles, publisher
 
 urlpatterns = [
@@ -25,5 +28,6 @@ urlpatterns = [
     path('data.json', support.get_data_json),
     path('generate_data_json', support.generate_data_json),
     path('update_read_by_author_tag', support.update_read_by_author_tag),
-    path('markdown_preview', support.markdown_to_html)
+    path('markdown_preview', support.markdown_to_html),
+    path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True)))
 ]
